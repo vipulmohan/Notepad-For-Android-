@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.application'
+}
+android {
+    namespace 'com.example.notepadplusandroid'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.example.notepadplusandroid'
+        minSdk 26
+        targetSdk 35
+        versionCode 3
+        versionName '3.0'
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+}
